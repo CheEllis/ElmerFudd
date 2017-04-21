@@ -1,0 +1,43 @@
+Handle Puzzle:
+	Request Puzzle
+	Wait to get puzzle interrupt
+		Based on a test, this seems to only take about 5000 cycles,
+		 the spimbot had only moved about 5 pixels
+	start solving puzzle
+	restart
+	
+Collect Bunnies:
+	Find nearest bunny that we can get to that won't weigh too much (over 100)
+	Calculate angle towards bunny
+	go towards bunny
+	grab bunny
+	do until our weight is high enough (~90),
+	 then drop off at playpen
+
+drop off bunnies:
+	move towards playpen
+	drop off bunnies at playpen
+	go back to collecting bunnies
+
+Open Enemy Pen:
+	if enemy's playpen can be opened again and if you're close enough,
+	 sabatoge enemy playpen
+
+Exceptions:
+	PLAYPEN_UNLOCK:
+		go back to pen
+		close it
+		drop off rabbits
+	EX_CARRY_LIMIT:
+		reset carried weight to zero
+	BUNNY_MOVE: (might not have to handle)
+		if our bunny moved, find the next nearest bunny
+	BONK:
+		asdasd
+	TIMER:
+		asdasd
+	REQUEST_PUZZLE:
+		start solving puzzle
+		
+	
+
